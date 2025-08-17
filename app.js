@@ -18,7 +18,7 @@ const contentDiv = document.getElementById("content");
 const optionsDiv = document.getElementById("options");
 const protocolTitle = document.getElementById("protocol-title");
 
-// --- Load protocol list ---
+// --- Carregar lista de protocolos ---
 function renderProtocolList() {
   protocolList.innerHTML = "";
   protocolos.forEach(p => {
@@ -32,7 +32,7 @@ function renderProtocolList() {
 
 renderProtocolList();
 
-// --- Search ---
+// --- Busca ---
 document.getElementById("search").addEventListener("input", function() {
   const term = this.value.toLowerCase();
   Array.from(protocolList.children).forEach(li => {
@@ -40,7 +40,7 @@ document.getElementById("search").addEventListener("input", function() {
   });
 });
 
-// --- Load protocol JSON ---
+// --- Carregar JSON de protocolos ---
 async function loadProtocol(protocol) {
   const res = await fetch("data/" + protocol.file);
   currentProtocol = await res.json();
@@ -53,7 +53,7 @@ async function loadProtocol(protocol) {
   appDiv.style.display = "block";
 }
 
-// --- Navigate nodes ---
+// --- Navegar pelos nodos ---
 function goToNode(nodeId) {
   const node = currentProtocol.nodes[nodeId];
   currentNode = node;
@@ -75,7 +75,7 @@ function goToNode(nodeId) {
   }
 }
 
-// --- Buttons ---
+// --- Botões ---
 document.getElementById("restart-btn").onclick = () => {
   history = [];
   goToNode(currentProtocol.start);
@@ -83,8 +83,8 @@ document.getElementById("restart-btn").onclick = () => {
 
 document.getElementById("back-btn").onclick = () => {
   if (history.length > 1) {
-    history.pop(); // remove current
-    const prev = history.pop(); // remove previous, then re-enter it
+    history.pop(); // Remover atual
+    const prev = history.pop(); // Remover anterior, re-adicionar
     goToNode(prev);
   }
 };

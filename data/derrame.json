@@ -1,31 +1,31 @@
 {
-  "title": "Stroke Protocol",
-  "start": "symptoms",
+  "title": "Protocolo de Derrame",
+  "start": "sintomas",
   "nodes": {
-    "symptoms": {
-      "question": "Does the patient show stroke symptoms?",
+    "sintomas": {
+      "question": "O paciente tem sintomas de derrame?",
       "options": [
-        { "text": "Yes", "next": "time" },
-        { "text": "No", "next": "end_no_stroke" }
+        { "text": "Sim", "next": "tempo" },
+        { "text": "Não", "next": "derrame_negativo" }
       ]
     },
-    "time": {
-      "question": "Symptom onset within 4.5 hours?",
+    "tempo": {
+      "question": "Os sintomas apareceram nas ultimas 4,5 horas?",
       "options": [
-        { "text": "Yes", "next": "thrombolysis" },
-        { "text": "No", "next": "other_treatment" }
+        { "text": "Sim", "next": "neuro" },
+        { "text": "Não", "next": "outro_tratamento" }
       ]
     },
-    "thrombolysis": {
-      "instruction": "Prepare for IV thrombolysis. Consult neurology.",
+    "neuro": {
+      "instruction": "Chame o neurologista, você não sabe nada!",
       "end": true
     },
-    "other_treatment": {
-      "instruction": "Refer for alternative stroke treatment. Consult neurology.",
+    "outro_tratamento": {
+      "instruction": "Sinistro, mate o paciente por segurança!",
       "end": true
     },
-    "end_no_stroke": {
-      "instruction": "Follow non-stroke differential diagnosis.",
+    "derrame_negativo": {
+      "instruction": "Então deu ruim!",
       "end": true
     }
   }
