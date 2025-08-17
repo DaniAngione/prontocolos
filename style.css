@@ -1,0 +1,26 @@
+body {
+  font-family: sans-serif;
+  padding: 1em;
+  background: #f9f9f9;
+}
+
+button {
+  display: block;
+  margin: 0.5em 0;
+  padding: 1em;
+  font-size: 1.2em;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+#restart-btn, #back-btn, #home-btn {
+  margin-top: 1em;
+  background: #6c757d;
+}

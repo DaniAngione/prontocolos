@@ -1,0 +1,32 @@
+{
+  "title": "Stroke Protocol",
+  "start": "symptoms",
+  "nodes": {
+    "symptoms": {
+      "question": "Does the patient show stroke symptoms?",
+      "options": [
+        { "text": "Yes", "next": "time" },
+        { "text": "No", "next": "end_no_stroke" }
+      ]
+    },
+    "time": {
+      "question": "Symptom onset within 4.5 hours?",
+      "options": [
+        { "text": "Yes", "next": "thrombolysis" },
+        { "text": "No", "next": "other_treatment" }
+      ]
+    },
+    "thrombolysis": {
+      "instruction": "Prepare for IV thrombolysis. Consult neurology.",
+      "end": true
+    },
+    "other_treatment": {
+      "instruction": "Refer for alternative stroke treatment. Consult neurology.",
+      "end": true
+    },
+    "end_no_stroke": {
+      "instruction": "Follow non-stroke differential diagnosis.",
+      "end": true
+    }
+  }
+}
