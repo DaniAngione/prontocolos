@@ -1,4 +1,4 @@
 [
-  { "title": "Protocolo de Derrame", "file": "derrame.json" },
-  { "title": "Protocolo de Sepse (INATIVO)", "file": "sepse.json" }
+  { "title": "Derrame", "file": "derrame.json" },
+  { "title": "Sepse (INATIVO)", "file": "sepse.json" }
 ]
